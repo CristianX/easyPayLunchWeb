@@ -16,7 +16,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-12">
-                            <strong>Agregar Productos</strong>
+                           <h3> <strong>Agregar Productos</strong></h3>
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@ $('#agregarProducto').on('click', function(){
         nombre: Nombre,
         precio: Precio,
         urlImagen:Url_Image,
-        
+
         id:Id,
 
     });
