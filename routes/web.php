@@ -20,3 +20,6 @@ Auth::routes();
 
 Route::get('/home','HomeController@index')->name('home');
 Route::get('/clientes','ClienteController@index')->name('clientes');
+Route::get('/productos','ProductoController@listarproductos')->name('productos');
+Route::get('/phpfirebase_sdk','FirebaseController@index');
+Route::get('/producto/create','ProductoController@agregarproductos');
