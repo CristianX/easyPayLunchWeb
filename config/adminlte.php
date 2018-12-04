@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'green',
+    'skin' => 'red',
 
     /*
     |--------------------------------------------------------------------------
@@ -118,14 +118,14 @@ return [
             'text'        => 'Clientes',
             'url'         => 'clientes',
             'icon'        => 'users',
-            'label'       => 4,
+            'label'       => '!', //por defecto era 4
             'label_color' => 'success',
         ],
         [
             'text'        => 'Productos',
             'url'         => 'productos',
-            'icon'        => 'cubes',
-            'label'       => 4,
+            'icon'        => 'coffee',
+            'label'       => '!',  //por defecto era 4
             'label_color' => 'success',
         ],
         /*'ACCOUNT SETTINGS',

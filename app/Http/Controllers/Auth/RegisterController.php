@@ -69,4 +69,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function registro(){
+        return view('vendor.adminlte.register');
+    }
 }

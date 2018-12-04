@@ -18,7 +18,7 @@
             <form action="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}" method="post">
                 {!! csrf_field() !!}
 
-                <input type="hidden" name="token" value="{{ $token }}">
+                <!--<input type="hidden" name="token" value="{{ "aqui iba signoDolar token" }}">-->
 
                 <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">
                     <input type="email" name="email" class="form-control" value="{{ isset($email) ? $email : old('email') }}"
