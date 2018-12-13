@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home','HomeController@index')->name('home');
-Route::get('/clientes','ClienteController@index')->name('clientes');
-Route::post('/clientes','ClienteController@addCliente')->name('clientes_add');
-Route::get('/clientes/{id}/editar', 'ClienteController@editar')->name('usuario');
-Route::get('/clientes/{id}/eliminar', 'ClienteController@eliminar')->name('eliminarUsuario');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/clientes','ClienteController@index')->name('clientes')->middleware('verified');
+Route::post('/clientes','ClienteController@addCliente')->name('clientes_add')->middleware('verified');
+Route::get('/clientes/{id}/editar', 'ClienteController@editar')->name('usuario')->middleware('verified');
+Route::get('/clientes/{id}/eliminar', 'ClienteController@eliminar')->name('eliminarUsuario')->middleware('verified');
 
 
 //Autenticación y Registro
@@ -35,4 +35,4 @@ Auth::routes();*/
 
 
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
