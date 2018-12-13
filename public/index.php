@@ -21,7 +21,11 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
+require __DIR__.'/../phpqrcode/qrlib.php';
+
 require __DIR__.'/../vendor/autoload.php';
+
+
 
 /*
 |--------------------------------------------------------------------------
