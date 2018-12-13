@@ -242,6 +242,9 @@ return array (
       array (
         0 => '1(?:33|55|81)',
       ),
+      'nationalPrefixFormattingRule' => '',
+      'domesticCarrierCodeFormattingRule' => '',
+      'nationalPrefixOptionalWhenFormatting' => false,
     ),
     3 => 
     array (
@@ -251,6 +254,9 @@ return array (
       array (
         0 => '1(?:[2467]|3[0-2457-9]|5[089]|8[2-9]|9[1-35-9])',
       ),
+      'nationalPrefixFormattingRule' => '',
+      'domesticCarrierCodeFormattingRule' => '',
+      'nationalPrefixOptionalWhenFormatting' => false,
     ),
   ),
   'mainCountryForCode' => false,

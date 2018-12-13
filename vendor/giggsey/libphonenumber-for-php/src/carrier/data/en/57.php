@@ -27,6 +27,10 @@ return array (
   57317 => 'Movistar',
   57318 => 'Movistar',
   57319 => 'Virgin Mobile',
-  5732 => 'Claro',
-  5735 => 'Avantel',
+  57320 => 'Claro',
+  57321 => 'Claro',
+  57322 => 'Claro',
+  57323 => 'Claro',
+  57350 => 'Avantel',
+  57351 => 'Avantel',
 );

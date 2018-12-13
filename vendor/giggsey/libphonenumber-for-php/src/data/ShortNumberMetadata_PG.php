@@ -29,11 +29,9 @@ return array (
   ),
   'tollFree' => 
   array (
-    'NationalNumberPattern' => '000|11[01]',
-    'ExampleNumber' => '000',
     'PossibleLength' => 
     array (
-      0 => 3,
+      0 => -1,
     ),
     'PossibleLengthLocalOnly' => 
     array (
@@ -63,7 +61,7 @@ return array (
   ),
   'shortCode' => 
   array (
-    'NationalNumberPattern' => '000|1(?:1[01]|5\\d\\d|6\\d{2,5})',
+    'NationalNumberPattern' => '000|1(?:1[01]|5\\d{2}|6\\d{2,5})',
     'ExampleNumber' => '000',
     'PossibleLength' => 
     array (
@@ -95,7 +93,7 @@ return array (
   'smsServices' => 
   array (
     'NationalNumberPattern' => '16\\d{2,5}',
-    'ExampleNumber' => '1600',
+    'ExampleNumber' => '1612',
     'PossibleLength' => 
     array (
       0 => 4,

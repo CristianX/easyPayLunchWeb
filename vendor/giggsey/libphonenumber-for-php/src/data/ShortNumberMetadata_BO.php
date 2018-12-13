@@ -26,11 +26,9 @@ return array (
   ),
   'tollFree' => 
   array (
-    'NationalNumberPattern' => '11[089]',
-    'ExampleNumber' => '110',
     'PossibleLength' => 
     array (
-      0 => 3,
+      0 => -1,
     ),
     'PossibleLengthLocalOnly' => 
     array (
@@ -91,8 +89,8 @@ return array (
   ),
   'smsServices' => 
   array (
-    'NationalNumberPattern' => '404\\d\\d',
-    'ExampleNumber' => '40400',
+    'NationalNumberPattern' => '40404',
+    'ExampleNumber' => '40404',
     'PossibleLength' => 
     array (
       0 => 5,

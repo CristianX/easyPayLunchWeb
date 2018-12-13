@@ -12,7 +12,6 @@
 namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
 
 use Predis\Response\ErrorInterface;
-use Symfony\Component\Cache\Traits\RedisClusterProxy;
 use Symfony\Component\Cache\Traits\RedisProxy;
 
 /**
@@ -46,8 +45,7 @@ class RedisSessionHandler extends AbstractSessionHandler
             !$redis instanceof \RedisArray &&
             !$redis instanceof \RedisCluster &&
             !$redis instanceof \Predis\Client &&
-            !$redis instanceof RedisProxy &&
-            !$redis instanceof RedisClusterProxy
+            !$redis instanceof RedisProxy
         ) {
             throw new \InvalidArgumentException(sprintf('%s() expects parameter 1 to be Redis, RedisArray, RedisCluster or Predis\Client, %s given', __METHOD__, \is_object($redis) ? \get_class($redis) : \gettype($redis)));
         }

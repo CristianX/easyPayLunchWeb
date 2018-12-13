@@ -60,7 +60,7 @@ return array (
   ),
   'premiumRate' => 
   array (
-    'NationalNumberPattern' => '(?:8(?:4(?:40[49]06|5624\\d)|7(?:0624|2299)\\d)|90[0167]624\\d)\\d{3}',
+    'NationalNumberPattern' => '(?:872299|90[0167]624)\\d{4}',
     'ExampleNumber' => '9016247890',
     'PossibleLength' => 
     array (
@@ -71,9 +71,10 @@ return array (
   ),
   'sharedCost' => 
   array (
+    'NationalNumberPattern' => '8(?:4(?:40[49]06|5624\\d)|70624\\d)\\d{3}',
+    'ExampleNumber' => '8456247890',
     'PossibleLength' => 
     array (
-      0 => -1,
     ),
     'PossibleLengthLocalOnly' => 
     array (
@@ -113,7 +114,7 @@ return array (
   ),
   'uan' => 
   array (
-    'NationalNumberPattern' => '(?:3(?:(?:08162|3\\d{4}|7(?:0624|2299))\\d|4(?:40[49]06|5624\\d))|55\\d{5})\\d{3}',
+    'NationalNumberPattern' => '3(?:08162\\d|3\\d{5}|4(?:40[49]06|5624\\d)|7(?:0624\\d|2299\\d))\\d{3}|55\\d{8}',
     'ExampleNumber' => '5512345678',
     'PossibleLength' => 
     array (
@@ -146,8 +147,7 @@ return array (
   'countryCode' => 44,
   'internationalPrefix' => '00',
   'nationalPrefix' => '0',
-  'nationalPrefixForParsing' => '0|([5-8]\\d{5})$',
-  'nationalPrefixTransformRule' => '1624$1',
+  'nationalPrefixForParsing' => '0',
   'sameMobileAndFixedLinePattern' => false,
   'numberFormat' => 
   array (

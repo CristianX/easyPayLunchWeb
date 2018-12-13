@@ -11,7 +11,7 @@
  */
 
 return array (
-  96392 => 'Syriatel',
+  963922 => 'Syriatel',
   96393 => 'Syriatel',
   96394 => 'MTN',
   963950 => 'MTN',

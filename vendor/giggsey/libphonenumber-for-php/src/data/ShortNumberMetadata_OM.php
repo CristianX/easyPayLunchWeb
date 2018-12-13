@@ -46,8 +46,8 @@ return array (
   ),
   'emergency' => 
   array (
-    'NationalNumberPattern' => '9999',
-    'ExampleNumber' => '9999',
+    'NationalNumberPattern' => '999\\d',
+    'ExampleNumber' => '9990',
     'PossibleLength' => 
     array (
     ),

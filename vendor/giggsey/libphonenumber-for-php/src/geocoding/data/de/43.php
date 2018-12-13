@@ -11,14 +11,7 @@
  */
 
 return array (
-  4312 => 'Wien',
-  4313 => 'Wien',
-  4314 => 'Wien',
-  4315 => 'Wien',
-  4316 => 'Wien',
-  4317 => 'Wien',
-  4318 => 'Wien',
-  4319 => 'Wien',
+  431 => 'Wien',
   432233 => 'Preßbaum',
   432242 => 'Sankt Andrä-Wördern',
   432249 => 'Groß-Enzersdorf',

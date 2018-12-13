@@ -151,9 +151,10 @@ return array (
   ),
   'noInternationalDialling' => 
   array (
+    'NationalNumberPattern' => '848\\d{6}',
     'PossibleLength' => 
     array (
-      0 => -1,
+      0 => 9,
     ),
     'PossibleLengthLocalOnly' => 
     array (

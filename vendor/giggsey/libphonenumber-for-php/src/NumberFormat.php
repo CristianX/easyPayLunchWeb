@@ -7,58 +7,15 @@ namespace libphonenumber;
  */
 class NumberFormat
 {
-    /**
-     * @var string
-     */
-    protected $pattern;
-    /**
-     * @var bool
-     */
-    protected $hasPattern = false;
-
-    /**
-     * @var string
-     */
-    protected $format;
-
-    /**
-     * @var bool
-     */
-    protected $hasFormat = false;
-
-    /**
-     * @var array
-     */
+    protected $pattern = null;
+    protected $format = null;
     protected $leadingDigitsPattern = array();
-
-    /**
-     * @var string
-     */
-    protected $nationalPrefixFormattingRule;
-
-    /**
-     * @var bool
-     */
-    protected $hasNationalPrefixFormattingRule = false;
+    protected $nationalPrefixFormattingRule = null;
     /**
      * @var bool
      */
     protected $nationalPrefixOptionalWhenFormatting = false;
-
-    /**
-     * @var bool
-     */
-    protected $hasNationalPrefixOptionalWhenFormatting = false;
-
-    /**
-     * @var string
-     */
-    protected $domesticCarrierCodeFormattingRule;
-
-    /**
-     * @var bool
-     */
-    protected $hasDomesticCarrierCodeFormattingRule = false;
+    protected $domesticCarrierCodeFormattingRule = null;
 
     public function __construct()
     {
@@ -70,22 +27,12 @@ class NumberFormat
      */
     public function clear()
     {
-        $this->hasPattern = false;
-        $this->pattern = null;
-
-        $this->hasFormat = false;
-        $this->format = null;
-
+        $this->pattern = "";
+        $this->format = "";
         $this->leadingDigitsPattern = array();
-
-        $this->hasNationalPrefixFormattingRule = false;
-        $this->nationalPrefixFormattingRule = null;
-
-        $this->hasNationalPrefixOptionalWhenFormatting = false;
+        $this->nationalPrefixFormattingRule = "";
         $this->nationalPrefixOptionalWhenFormatting = false;
-
-        $this->hasDomesticCarrierCodeFormattingRule = false;
-        $this->domesticCarrierCodeFormattingRule = null;
+        $this->domesticCarrierCodeFormattingRule = "";
 
         return $this;
     }
@@ -95,7 +42,7 @@ class NumberFormat
      */
     public function hasPattern()
     {
-        return $this->hasPattern;
+        return isset($this->pattern);
     }
 
     /**
@@ -112,7 +59,6 @@ class NumberFormat
      */
     public function setPattern($value)
     {
-        $this->hasPattern = true;
         $this->pattern = $value;
 
         return $this;
@@ -123,7 +69,7 @@ class NumberFormat
      */
     public function hasNationalPrefixOptionalWhenFormatting()
     {
-        return $this->hasNationalPrefixOptionalWhenFormatting;
+        return isset($this->nationalPrefixOptionalWhenFormatting);
     }
 
     /**
@@ -139,7 +85,6 @@ class NumberFormat
      */
     public function setNationalPrefixOptionalWhenFormatting($nationalPrefixOptionalWhenFormatting)
     {
-        $this->hasNationalPrefixOptionalWhenFormatting = true;
         $this->nationalPrefixOptionalWhenFormatting = $nationalPrefixOptionalWhenFormatting;
     }
 
@@ -148,7 +93,7 @@ class NumberFormat
      */
     public function hasFormat()
     {
-        return $this->hasFormat;
+        return ($this->format);
     }
 
     /**
@@ -165,14 +110,13 @@ class NumberFormat
      */
     public function setFormat($value)
     {
-        $this->hasFormat = true;
         $this->format = $value;
 
         return $this;
     }
 
     /**
-     * @return string[]
+     * @return string
      */
     public function leadingDigitPatterns()
     {
@@ -212,7 +156,7 @@ class NumberFormat
      */
     public function hasNationalPrefixFormattingRule()
     {
-        return $this->hasNationalPrefixFormattingRule;
+        return isset($this->nationalPrefixFormattingRule);
     }
 
     /**
@@ -229,7 +173,6 @@ class NumberFormat
      */
     public function setNationalPrefixFormattingRule($value)
     {
-        $this->hasNationalPrefixFormattingRule = true;
         $this->nationalPrefixFormattingRule = $value;
 
         return $this;
@@ -250,7 +193,7 @@ class NumberFormat
      */
     public function hasDomesticCarrierCodeFormattingRule()
     {
-        return $this->hasDomesticCarrierCodeFormattingRule;
+        return isset($this->domesticCarrierCodeFormattingRule);
     }
 
     /**
@@ -267,7 +210,6 @@ class NumberFormat
      */
     public function setDomesticCarrierCodeFormattingRule($value)
     {
-        $this->hasDomesticCarrierCodeFormattingRule = true;
         $this->domesticCarrierCodeFormattingRule = $value;
 
         return $this;
@@ -339,10 +281,10 @@ class NumberFormat
             $this->addLeadingDigitsPattern($leadingDigitsPattern);
         }
 
-        if (isset($input['nationalPrefixFormattingRule']) && $input['nationalPrefixFormattingRule'] !== '') {
+        if (isset($input['nationalPrefixFormattingRule'])) {
             $this->setNationalPrefixFormattingRule($input['nationalPrefixFormattingRule']);
         }
-        if (isset($input['domesticCarrierCodeFormattingRule']) && $input['domesticCarrierCodeFormattingRule'] !== '') {
+        if (isset($input['domesticCarrierCodeFormattingRule'])) {
             $this->setDomesticCarrierCodeFormattingRule($input['domesticCarrierCodeFormattingRule']);
         }
 

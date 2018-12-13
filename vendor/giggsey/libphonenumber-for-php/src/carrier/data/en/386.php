@@ -26,7 +26,8 @@ return array (
   386681 => 'A1',
   386686 => 'A1',
   386689 => 'A1',
-  38669 => 'HoT',
+  386696 => 'HoT',
+  386699 => 'HoT',
   38670 => 'Telemach',
   38671 => 'Telekom Slovenije',
 );

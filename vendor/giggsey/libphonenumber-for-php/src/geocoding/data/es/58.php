@@ -11,6 +11,6 @@
  */
 
 return array (
-  5821 => 'Distrito Capital/Miranda/Vargas',
+  58212 => 'Distrito Capital/Miranda/Vargas',
   58237 => 'Dependencias Federales',
 );

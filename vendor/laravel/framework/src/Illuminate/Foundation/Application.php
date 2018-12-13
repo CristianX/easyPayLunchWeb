@@ -29,7 +29,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      *
      * @var string
      */
-    const VERSION = '5.7.15';
+    const VERSION = '5.7.13';
 
     /**
      * The base path for the Laravel installation.
@@ -184,7 +184,9 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     protected function registerBaseServiceProviders()
     {
         $this->register(new EventServiceProvider($this));
+
         $this->register(new LogServiceProvider($this));
+
         $this->register(new RoutingServiceProvider($this));
     }
 
@@ -515,10 +517,6 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function runningInConsole()
     {
-        if (isset($_ENV['APP_RUNNING_IN_CONSOLE'])) {
-            return $_ENV['APP_RUNNING_IN_CONSOLE'] === 'true';
-        }
-
         return php_sapi_name() === 'cli' || php_sapi_name() === 'phpdbg';
     }
 

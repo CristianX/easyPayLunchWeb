@@ -81,9 +81,7 @@ abstract class HasOneOrMany extends Relation
      */
     public function addEagerConstraints(array $models)
     {
-        $whereIn = $this->whereInMethod($this->parent, $this->localKey);
-
-        $this->query->{$whereIn}(
+        $this->query->whereIn(
             $this->foreignKey, $this->getKeys($models, $this->localKey)
         );
     }
@@ -421,15 +419,5 @@ abstract class HasOneOrMany extends Relation
     public function getQualifiedForeignKeyName()
     {
         return $this->foreignKey;
-    }
-
-    /**
-     * Get the local key for the relationship.
-     *
-     * @return string
-     */
-    public function getLocalKeyName()
-    {
-        return $this->localKey;
     }
 }

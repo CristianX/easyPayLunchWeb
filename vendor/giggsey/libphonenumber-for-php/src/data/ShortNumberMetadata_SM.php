@@ -25,10 +25,9 @@ return array (
   ),
   'tollFree' => 
   array (
-    'NationalNumberPattern' => '11[358]',
-    'ExampleNumber' => '113',
     'PossibleLength' => 
     array (
+      0 => -1,
     ),
     'PossibleLengthLocalOnly' => 
     array (

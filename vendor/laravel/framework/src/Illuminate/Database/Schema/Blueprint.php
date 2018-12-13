@@ -134,8 +134,6 @@ class Blueprint
      *
      * @param  \Illuminate\Database\Connection  $connection
      * @return void
-     *
-     * @throws \BadMethodCallException
      */
     protected function ensureCommandsAreValid(Connection $connection)
     {

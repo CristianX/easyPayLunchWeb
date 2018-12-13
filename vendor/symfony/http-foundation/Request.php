@@ -545,13 +545,10 @@ class Request
         $requestOrder = ini_get('request_order') ?: ini_get('variables_order');
         $requestOrder = preg_replace('#[^cgp]#', '', strtolower($requestOrder)) ?: 'gp';
 
-        $_REQUEST = array(array());
-
+        $_REQUEST = array();
         foreach (str_split($requestOrder) as $order) {
-            $_REQUEST[] = $request[$order];
+            $_REQUEST = array_merge($_REQUEST, $request[$order]);
         }
-
-        $_REQUEST = array_merge(...$_REQUEST);
     }
 
     /**
@@ -1287,7 +1284,7 @@ class Request
     {
         $canonicalMimeType = null;
         if (false !== $pos = strpos($mimeType, ';')) {
-            $canonicalMimeType = trim(substr($mimeType, 0, $pos));
+            $canonicalMimeType = substr($mimeType, 0, $pos);
         }
 
         if (null === static::$formats) {
@@ -1451,7 +1448,7 @@ class Request
      *
      * @see https://tools.ietf.org/html/rfc7231#section-4.2.3
      *
-     * @return bool True for GET and HEAD, false otherwise
+     * @return bool
      */
     public function isMethodCacheable()
     {
@@ -1698,16 +1695,10 @@ class Request
             $this->server->remove('IIS_WasUrlRewritten');
         } elseif ($this->server->has('REQUEST_URI')) {
             $requestUri = $this->server->get('REQUEST_URI');
-
             // HTTP proxy reqs setup request URI with scheme and host [and port] + the URL path, only use URL path
-            $uriComponents = parse_url($requestUri);
-
-            if (isset($uriComponents['path'])) {
-                $requestUri = $uriComponents['path'];
-            }
-
-            if (isset($uriComponents['query'])) {
-                $requestUri .= '?'.$uriComponents['query'];
+            $schemeAndHttpHost = $this->getSchemeAndHttpHost();
+            if (0 === strpos($requestUri, $schemeAndHttpHost)) {
+                $requestUri = substr($requestUri, \strlen($schemeAndHttpHost));
             }
         } elseif ($this->server->has('ORIG_PATH_INFO')) {
             // IIS 5.0, PHP as CGI

@@ -11,7 +11,6 @@
 
 namespace Symfony\Component\HttpFoundation\Tests;
 
-use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -572,24 +571,6 @@ class ResponseTest extends ResponseTestCase
         $response->prepare($request);
         $this->assertFalse($response->headers->has('pragma'));
         $this->assertFalse($response->headers->has('expires'));
-    }
-
-    public function testPrepareSetsCookiesSecure()
-    {
-        $cookie = Cookie::create('foo', 'bar');
-
-        $response = new Response('foo');
-        $response->headers->setCookie($cookie);
-
-        $request = Request::create('/', 'GET');
-        $response->prepare($request);
-
-        $this->assertFalse($cookie->isSecure());
-
-        $request = Request::create('https://localhost/', 'GET');
-        $response->prepare($request);
-
-        $this->assertTrue($cookie->isSecure());
     }
 
     public function testSetCache()

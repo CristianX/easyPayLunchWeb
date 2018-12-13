@@ -23,8 +23,7 @@ return array (
     array (
       0 => 3,
       1 => 5,
-      2 => 6,
-      3 => 7,
+      2 => 7,
     ),
   ),
   'fixedLine' => 
@@ -38,8 +37,7 @@ return array (
     array (
       0 => 3,
       1 => 5,
-      2 => 6,
-      3 => 7,
+      2 => 7,
     ),
   ),
   'mobile' => 
@@ -154,12 +152,11 @@ return array (
   array (
     0 => 
     array (
-      'pattern' => '(\\d{4})(\\d)(\\d{4})',
+      'pattern' => '([349]\\d{2})(\\d{2})(\\d{4})',
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' => 
       array (
-        0 => '3(?:[1245]|3[12])',
-        1 => '3(?:[1245]|3(?:1[0-689]|2))',
+        0 => '[34]7|91[78]',
       ),
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
@@ -167,11 +164,11 @@ return array (
     ),
     1 => 
     array (
-      'pattern' => '(\\d{6})(\\d)(\\d{2})',
+      'pattern' => '([457-9]\\d)(\\d{3})(\\d{4})',
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' => 
       array (
-        0 => '33',
+        0 => '4[148]|[578]|9(?:[0235-9]|1[59])',
       ),
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
@@ -179,11 +176,14 @@ return array (
     ),
     2 => 
     array (
-      'pattern' => '(\\d{2})(\\d{3})(\\d{4})',
+      'pattern' => '(331700)(\\d)(\\d{2})',
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' => 
       array (
-        0 => '4[148]|[578]|9(?:[0235-9]|1[0-69])',
+        0 => '331',
+        1 => '3317',
+        2 => '33170',
+        3 => '331700',
       ),
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',
@@ -191,11 +191,12 @@ return array (
     ),
     3 => 
     array (
-      'pattern' => '(\\d{3})(\\d{2})(\\d{4})',
+      'pattern' => '(\\d{4})(\\d)(\\d{4})',
       'format' => '$1 $2 $3',
       'leadingDigitsPatterns' => 
       array (
-        0 => '[349]',
+        0 => '3[1-5]',
+        1 => '3(?:[1245]|3(?:[02-9]|1[0-589]))',
       ),
       'nationalPrefixFormattingRule' => '',
       'domesticCarrierCodeFormattingRule' => '',

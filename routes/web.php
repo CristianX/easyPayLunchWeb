@@ -19,7 +19,6 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home','HomeController@index')->name('home');
 Route::get('/clientes','ClienteController@index')->name('clientes');
-<<<<<<< HEAD
 Route::post('/clientes','ClienteController@addCliente')->name('clientes_add');
 Route::get('/clientes/{id}/editar', 'ClienteController@editar')->name('usuario');
 Route::get('/clientes/{id}/eliminar', 'ClienteController@eliminar')->name('eliminarUsuario');
@@ -37,22 +36,3 @@ Auth::routes();*/
 
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-=======
-//Route::get('/productos','ProductoController@listarproductos')->name('productos');
-Route::get('/phpfirebase_sdk','FirebaseController@index');
-//Route::get('/producto/create','ProductoController@agregarproductos');
-//Route::get('/producto/show','ProductoController@show');
-Route::resource('productos','ProductooController');
-
-Route::get('/codigoqr','QrController@makeQR');
-Route::get('/vcard','QrController@vcard');
-
-Route::get('/pagoqr','QR2Controller@qr');
-
-Route::get('/generarqr','QrPagoController@qr');
-
-Route::get('/promociones','PromocionController@index');
-//Route::get('promocion/create','PromocionController@agregar');
-
-
->>>>>>> ff1073724f256a70e3fbe2eb7b83148cc7ce9d58

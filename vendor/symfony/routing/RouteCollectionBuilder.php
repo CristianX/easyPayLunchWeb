@@ -11,7 +11,7 @@
 
 namespace Symfony\Component\Routing;
 
-use Symfony\Component\Config\Exception\LoaderLoadException;
+use Symfony\Component\Config\Exception\FileLoaderLoadException;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\ResourceInterface;
 
@@ -54,7 +54,7 @@ class RouteCollectionBuilder
      *
      * @return self
      *
-     * @throws LoaderLoadException
+     * @throws FileLoaderLoadException
      */
     public function import($resource, $prefix = '/', $type = null)
     {
@@ -347,7 +347,7 @@ class RouteCollectionBuilder
      *
      * @return RouteCollection[]
      *
-     * @throws LoaderLoadException If no loader is found
+     * @throws FileLoaderLoadException If no loader is found
      */
     private function load($resource, string $type = null): array
     {
@@ -362,11 +362,11 @@ class RouteCollectionBuilder
         }
 
         if (null === $resolver = $this->loader->getResolver()) {
-            throw new LoaderLoadException($resource, null, null, null, $type);
+            throw new FileLoaderLoadException($resource, null, null, null, $type);
         }
 
         if (false === $loader = $resolver->resolve($resource, $type)) {
-            throw new LoaderLoadException($resource, null, null, null, $type);
+            throw new FileLoaderLoadException($resource, null, null, null, $type);
         }
 
         $collections = $loader->load($resource, $type);

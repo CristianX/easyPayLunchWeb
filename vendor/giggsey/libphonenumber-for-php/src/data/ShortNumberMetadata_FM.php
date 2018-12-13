@@ -47,7 +47,7 @@ return array (
   ),
   'emergency' => 
   array (
-    'NationalNumberPattern' => '(?:32022|91)1',
+    'NationalNumberPattern' => '320\\d{3}|911',
     'ExampleNumber' => '911',
     'PossibleLength' => 
     array (

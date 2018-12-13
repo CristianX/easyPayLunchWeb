@@ -25,5 +25,5 @@ return array (
   9054287 => 'KKTC Telsim',
   9054288 => 'KKTC Telsim',
   9055 => 'Turk Telekom',
-  9056 => 'Turkcell',
+  90561 => 'Turkcell',
 );

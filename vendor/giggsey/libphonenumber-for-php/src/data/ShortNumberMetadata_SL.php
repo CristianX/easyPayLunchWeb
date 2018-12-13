@@ -26,11 +26,9 @@ return array (
   ),
   'tollFree' => 
   array (
-    'NationalNumberPattern' => '(?:01|99)9',
-    'ExampleNumber' => '019',
     'PossibleLength' => 
     array (
-      0 => 3,
+      0 => -1,
     ),
     'PossibleLengthLocalOnly' => 
     array (
@@ -49,7 +47,7 @@ return array (
   'emergency' => 
   array (
     'NationalNumberPattern' => '(?:01|99)9',
-    'ExampleNumber' => '019',
+    'ExampleNumber' => '999',
     'PossibleLength' => 
     array (
       0 => 3,
@@ -61,7 +59,7 @@ return array (
   'shortCode' => 
   array (
     'NationalNumberPattern' => '(?:01|99)9|60400',
-    'ExampleNumber' => '019',
+    'ExampleNumber' => '999',
     'PossibleLength' => 
     array (
     ),
@@ -81,7 +79,7 @@ return array (
   ),
   'carrierSpecific' => 
   array (
-    'NationalNumberPattern' => '604\\d\\d',
+    'NationalNumberPattern' => '60400',
     'ExampleNumber' => '60400',
     'PossibleLength' => 
     array (
@@ -93,7 +91,7 @@ return array (
   ),
   'smsServices' => 
   array (
-    'NationalNumberPattern' => '604\\d\\d',
+    'NationalNumberPattern' => '60400',
     'ExampleNumber' => '60400',
     'PossibleLength' => 
     array (

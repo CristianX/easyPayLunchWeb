@@ -146,9 +146,7 @@ class HasManyThrough extends Relation
      */
     public function addEagerConstraints(array $models)
     {
-        $whereIn = $this->whereInMethod($this->farParent, $this->localKey);
-
-        $this->query->{$whereIn}(
+        $this->query->whereIn(
             $this->getQualifiedFirstKeyName(), $this->getKeys($models, $this->localKey)
         );
     }
@@ -537,16 +535,6 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * Get the foreign key on the "through" model.
-     *
-     * @return string
-     */
-    public function getFirstKeyName()
-    {
-        return $this->firstKey;
-    }
-
-    /**
      * Get the qualified foreign key on the "through" model.
      *
      * @return string
@@ -554,16 +542,6 @@ class HasManyThrough extends Relation
     public function getQualifiedFirstKeyName()
     {
         return $this->throughParent->qualifyColumn($this->firstKey);
-    }
-
-    /**
-     * Get the foreign key on the related model.
-     *
-     * @return string
-     */
-    public function getForeignKeyName()
-    {
-        return $this->secondKey;
     }
 
     /**
@@ -577,16 +555,6 @@ class HasManyThrough extends Relation
     }
 
     /**
-     * Get the local key on the far parent model.
-     *
-     * @return string
-     */
-    public function getLocalKeyName()
-    {
-        return $this->localKey;
-    }
-
-    /**
      * Get the qualified local key on the far parent model.
      *
      * @return string
@@ -594,15 +562,5 @@ class HasManyThrough extends Relation
     public function getQualifiedLocalKeyName()
     {
         return $this->farParent->qualifyColumn($this->localKey);
-    }
-
-    /**
-     * Get the local key on the intermediary model.
-     *
-     * @return string
-     */
-    public function getSecondLocalKeyName()
-    {
-        return $this->secondLocalKey;
     }
 }

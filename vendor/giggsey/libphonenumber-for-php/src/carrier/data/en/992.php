@@ -11,11 +11,12 @@
  */
 
 return array (
-  99241 => 'Megafon',
+  992411 => 'Megafon',
+  992418 => 'Megafon',
   99250 => 'Tcell',
   99255 => 'Megafon',
-  9927 => 'Tcell',
-  9928 => 'Megafon',
+  99277 => 'Tcell',
+  99288 => 'Megafon',
   99290 => 'Megafon',
   992917 => 'Tacom',
   992918 => 'Babilon-M',

@@ -134,7 +134,7 @@ class LoggerDataCollector extends DataCollector implements LateDataCollectorInte
             $log['timestamp'] = $bootTime;
             $log['priority'] = 100;
             $log['priorityName'] = 'DEBUG';
-            $log['channel'] = null;
+            $log['channel'] = '-';
             $log['scream'] = false;
             unset($log['type'], $log['file'], $log['line'], $log['trace'], $log['trace'], $log['count']);
             $logs[] = $log;
