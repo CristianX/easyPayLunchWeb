@@ -70,7 +70,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function registro(){
+    /*public function registro(){
         return view('vendor.adminlte.register');
-    }
+    }*/
 }

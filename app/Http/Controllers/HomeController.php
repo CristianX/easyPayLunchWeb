@@ -3,18 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Kreait\Firebase;
-use Kreait\Firebase\Factory;
-use Kreait\Firebase\ServiceAccount;
 
 class HomeController extends Controller
 {
-
-    public function index(){
-
-        
-       return view('pages.home', compact('all_subject'));
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 
-    
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('pages.home');
+    }
 }

@@ -21,10 +21,9 @@
       <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
-          <th>Nombre</th>
-          <th>Imagen</th>
           <th>Correo</th>
-          <th>TokenUser</th>
+          <th>Dirección</th>
+
           <th>Acción</th>
 
         </tr>
@@ -32,12 +31,10 @@
         <tbody>
         @foreach ($all_subject as $cliente)
         <tr>
-          <td>{{$cliente['Nombre']}}</td>
-        <td><img src="{{$cliente['Imagen']}}" style="height: 50px; width: 50px;"></td>
-          <td>{{$cliente['Mail']}}</td>
-          <td>{{$cliente['TokenUser']}}</td>
-          <td> <button type="button" class="btn btn-danger"><span class="fa fa-fw fa-trash"></span></button> | <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-              <span class="fa fa-fw fa-refresh"></span>
+          <td>{{$cliente['correoElectronico']}}</td>
+          <td>{{$cliente['direccion']}}</td>
+          <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default">
+              <span class="fa fa-fw fa-trash"></span>
             </button></td>
          
         </tr>
@@ -65,26 +62,25 @@
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Agregar Nuevo Cliente</h4>
+            <h4 class="modal-title">Eliminar Cliente</h4>
           </div>
           <form method="post" action="">
           <div class="modal-body">
 
               {!! csrf_field() !!}  <!-- token para las vistas modales -->
   
-              <input type="text" placeholder="Imagen de Cliente" class="form-control" name="imagenCliente">
-              <input type="text" placeholder="Correo Cliente" class="form-control" name="correoCliente">
-              <input type="text" placeholder="Nombre" name="nombreCliente" class="form-control">
-              <input type="text" placeholder="TokenUser" class="form-control" name="tokenCliente">
+              Desea Eliminar el usuario? 
 
           </div>
           
           <div class="modal-footer">
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-danger">Guardar Cambios</button>
+            <button type="submit" class="btn btn-danger" onclick="clientes/1/eliminar"><span class="fa fa-fw fa-trash"></span></button>
           </div>
 
         </form>
+
+        
 
         
 
@@ -95,7 +91,11 @@
     </div>
     <!-- /.modal -->
 
+    
+
 
 
 
 @stop
+
+

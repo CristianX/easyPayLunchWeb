@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
+Auth::routes(['verify' => true]);
 
 Route::get('/home','HomeController@index')->name('home');
 Route::get('/clientes','ClienteController@index')->name('clientes');
@@ -26,7 +25,14 @@ Route::get('/clientes/{id}/eliminar', 'ClienteController@eliminar')->name('elimi
 
 
 //Autenticación y Registro
-Route::get('/login', 'Auth\LoginController@login')->name('login');
+/*Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::get('/register', 'Auth\RegisterController@registro')->name('registro');
 Route::get('/password/reset', 'Auth\ResetPasswordController@resetPassword')->name('resetear_password');
 Route::get('/password/email', 'Auth\ResetPasswordController@resetEmail')->name('resetear_email');
+Auth::routes();*/
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');

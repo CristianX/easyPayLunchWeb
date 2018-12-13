@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Easy Pay Lunch'),
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -151,6 +151,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Laravel\Tinker\TinkerServiceProvider::class,
 
         /*
          * Application Service Providers...

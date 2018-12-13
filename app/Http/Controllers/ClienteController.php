@@ -89,7 +89,7 @@ class ClienteController extends Controller
         echo '<pre>';
         print_r($newPost->getvalue());*/
 
-        $ref = $database->getReference('Usuario/');
+        $ref = $database->getReference('usuario/');
         $subjects = $ref->getValue();
 
         foreach($subjects as $subject){
@@ -131,7 +131,7 @@ class ClienteController extends Controller
         echo '<pre>';
         print_r($newPost->getvalue());*/
 
-        $ref = $database->getReference('Usuario/');
+        $ref = $database->getReference('usuario/');
 
         $imagenCliente = $request->imagenCliente;  //->imagenCliente es el nombre que llevan los inputText de la vista
         $nombreCliente = $request->nombreCliente;
@@ -168,7 +168,7 @@ class ClienteController extends Controller
 
         $database = $firebase->getDatabase();
 
-        $ref = $database-> getReference("Usuario");
+        $ref = $database-> getReference("usuario");
 
 
 
@@ -196,7 +196,7 @@ class ClienteController extends Controller
 
         $database = $firebase->getDatabase();
 
-        $ref = $database-> getReference("Usuario");
+        $ref = $database-> getReference("usuario");
 
         $ref->getChild($id)->remove();
 
