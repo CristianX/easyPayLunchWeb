@@ -15,3 +15,4 @@ version 1.9: Commit de vistas de eliminar y editar                      //Reyes
 Version 1.10: Mejora de vistas  de listar productos com imagenes        //Reyes
 Version 1.11: Commit implementando las vistas de login, register, reset password; implementado dentro del crud de clientes la función de eliminar y vistas construidas. //Tapia
 Version 1.12: Commit de login y verificación de email con servidor de correo de pruebas //Tapia
+Version 1.13: Visualización de sesión en el panel de control, adaptacion de items en el panel de control
