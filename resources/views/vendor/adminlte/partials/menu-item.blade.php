@@ -1,4 +1,16 @@
+
 @if (is_string($item))
+  <!-- div user panel Incluido para mostrar el nombre de usuario y la imagen de este -->
+  <div class="user-panel">
+        <div class="pull-left image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>{{ Auth::user()->name }}</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
     <li class="header">{{ $item }}</li>
 @else
     <li class="{{ $item['class'] }}">
@@ -23,4 +35,6 @@
             </ul>
         @endif
     </li>
+
+
 @endif

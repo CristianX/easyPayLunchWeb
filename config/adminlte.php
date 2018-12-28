@@ -106,48 +106,54 @@ return [
     | layout. The 'can' is a filter on Laravel's built in Gate functionality.
     |
     */
+    
 
     'menu' => [
-        'Administrador',
+
+        'INICIO',
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Clientes',
+            'text'        => 'Mis Productos',
             'url'         => 'clientes',
-            'icon'        => 'users',
-            'label'       => '!', //por defecto era 4
-            'label_color' => 'success',
+            'icon'        => 'beer',
+            /*'label'       => '!', //por defecto era 4
+            'label_color' => 'success',*/
         ],
         [
-            'text'        => 'Productos',
+            'text'        => 'Mis Categorias',
             'url'         => 'productos',
-            'icon'        => 'coffee',
-            'label'       => '!',  //por defecto era 4
-            'label_color' => 'success',
-        ],
-        /*'ACCOUNT SETTINGS',
-        [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
+            'icon'        => 'tasks',
+            /*'label'       => '!',  //por defecto era 4
+            'label_color' => 'success',*/
         ],
         [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
+            'text'        => 'Mis Promociones',
+            'url'         => 'productos',
+            'icon'        => 'area-chart',
+            /*'label'       => '!',  //por defecto era 4
+            'label_color' => 'success',*/
         ],
         [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
+            'text'        => 'Mis Pedidos',
+            'url'         => 'productos',
+            'icon'        => 'motorcycle',
+            /*'label'       => '!',  //por defecto era 4
+            'label_color' => 'success',*/
+        ],
+        [
+            'text'    => 'Administrar',
+            'icon'    => 'gears',
             'submenu' => [
                 [
-                    'text' => 'Level One',
+                    'text' => 'Pedidos',
                     'url'  => '#',
+                    'icon_color' => 'red',
                 ],
-                [
+                /*[
                     'text'    => 'Level One',
                     'url'     => '#',
                     'submenu' => [
@@ -170,13 +176,19 @@ return [
                             ],
                         ],
                     ],
+                ],*/
+                [
+                    'text' => 'Facturas',
+                    'url'  => '#',
+                    'icon_color' => 'red',
                 ],
                 [
-                    'text' => 'Level One',
+                    'text' => 'Reportes',
                     'url'  => '#',
+                    'icon_color' => 'red',
                 ],
             ],
-        ],*/
+        ],
         /*'LABELS',
         [
             'text'       => 'Important',

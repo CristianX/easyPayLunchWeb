@@ -3,5 +3,12 @@
 
     "click here to request another": "Click aquí para solicitar otro",
 
-    "Verify Email Address" : "Verifica tu email"
+    "Verify Email Address" : "Verifica tu email",
+
+    "A fresh verification link has been sent to your email address.": "Se ha enviado un nuevo enlace de verificación a su dirección de correo electrónico.",
+
+    "Before proceeding, please check your email for a verification link.": "Antes de continuar, por favor revise su correo electrónico para ver si hay un enlace de verificación.",
+
+    "If you did not receive the email": "Si no recibió el correo electrónico"
+
 }
