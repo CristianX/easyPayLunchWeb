@@ -17,11 +17,18 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
+//Vista de clientes ((ya no incluido))
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('/clientes','ClienteController@index')->name('clientes')->middleware('verified');
 Route::post('/clientes','ClienteController@addCliente')->name('clientes_add')->middleware('verified');
 Route::get('/clientes/{id}/editar', 'ClienteController@editar')->name('usuario')->middleware('verified');
 Route::get('/clientes/{id}/eliminar', 'ClienteController@eliminar')->name('eliminarUsuario')->middleware('verified');
+
+
+
+//Perfil de usuario
+Route::get('/perfil', 'UserController@profile')->name('perfil')->middleware('verified');
+Route::post('/perfil', 'UserController@update_avatar');
 
 
 //Autenticación y Registro
@@ -32,7 +39,3 @@ Route::get('/password/email', 'Auth\ResetPasswordController@resetEmail')->name('
 Auth::routes();*/
 
 //Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-

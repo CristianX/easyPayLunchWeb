@@ -34,7 +34,7 @@
             <a href="http://localhost/easyPayLunchWeb-master/public/clientes" class="small-box-footer">Más Información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        
+
         <!-- ./col -->
 		<div class="col-lg-3 col-xs-6">
           <!-- small box -->
@@ -50,9 +50,9 @@
             <a href="#" class="small-box-footer">Más Información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        
+
         <!-- ./col -->
-        
+
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
@@ -78,15 +78,15 @@
           <!-- Custom tabs (Charts with tabs)-->
           <div class="nav-tabs-custom">
             <!-- Tabs within a box -->
-         
+
             <div class="tab-content no-padding">
               <!-- Morris chart - Sales -->
               <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
               <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
             </div>
           </div>
-          
-        
+
+
 
           <!-- quick email widget -->
           <div class="box box-info">
