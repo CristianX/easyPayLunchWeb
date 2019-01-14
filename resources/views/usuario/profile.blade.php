@@ -31,7 +31,7 @@
                </div>
                <div class="box-footer">
                  <div class="row">
-                   <div class="col-sm-4 border-right">
+                   <div class="col-sm-6 border-right">
                      <form enctype="multipart/form-data" action="/perfil" method="POST">
                       <!-- <label>Subir Imagen de Perfil</label> -->
                        <input type="file" name="avatar">
@@ -39,23 +39,27 @@
                        <input type="submit" class="pull-right btn btn-sm btn-primary" value="subir">
                      </form>
                      <!-- /.description-block -->
+
                    </div>
                    <!-- /.col -->
-                   <div class="col-sm-4 border-right">
-                     <div class="description-block">
-                       <h5 class="description-header">13,000</h5>
-                       <span class="description-text">FOLLOWERS</span>
-                     </div>
+                   <div class="col-sm-6 border-left">
+                     <div class="direct-chat-msg right">
+                      <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name pull-right">Easy Pay</span>
+                        <span class="direct-chat-timestamp pull-left">23 Ene 2:05 pm</span>
+                      </div>
+                      <!-- /.direct-chat-info -->
+                      <img class="direct-chat-img" src="../dist/img/user3-128x128.jpg" alt="Message User Image"><!-- /.direct-chat-img -->
+                      <div class="direct-chat-text">
+                        Aquí puedes subir tu imagen de perfil!
+                      </div>
+                  <!-- /.direct-chat-text -->
+                    </div>
+                  </div>
                      <!-- /.description-block -->
                    </div>
                    <!-- /.col -->
-                   <div class="col-sm-4">
-                     <div class="description-block">
-                       <h5 class="description-header">35</h5>
-                       <span class="description-text">PRODUCTS</span>
-                     </div>
-                     <!-- /.description-block -->
-                   </div>
+
                    <!-- /.col -->
                  </div>
                  <!-- /.row -->

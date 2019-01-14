@@ -30,6 +30,9 @@ Route::get('/clientes/{id}/eliminar', 'ClienteController@eliminar')->name('elimi
 Route::get('/perfil', 'UserController@profile')->name('perfil')->middleware('verified');
 Route::post('/perfil', 'UserController@update_avatar');
 
+//pedidos
+Route::get('/pedido', 'PedidoController@index')->name('pedido')->middleware('verified');
+
 
 //Autenticación y Registro
 /*Route::get('/login', 'Auth\LoginController@login')->name('login');

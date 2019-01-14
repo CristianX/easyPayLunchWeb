@@ -106,7 +106,7 @@ return [
     | layout. The 'can' is a filter on Laravel's built in Gate functionality.
     |
     */
-    
+
 
     'menu' => [
 
@@ -139,7 +139,7 @@ return [
         ],
         [
             'text'        => 'Mis Pedidos',
-            'url'         => 'productos',
+            'url'         => '/pedido',
             'icon'        => 'motorcycle',
             /*'label'       => '!',  //por defecto era 4
             'label_color' => 'success',*/
