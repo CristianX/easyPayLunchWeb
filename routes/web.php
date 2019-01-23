@@ -31,7 +31,7 @@ Route::get('/perfil', 'UserController@profile')->name('perfil')->middleware('ver
 Route::post('/perfil', 'UserController@update_avatar');
 
 //pedidos
-Route::get('/pedido', 'PedidoController@index')->name('pedido')->middleware('verified');
+Route::get('/pedido', 'PedidoController@listarPedidos')->name('pedido')->middleware('verified');
 
 
 //Autenticación y Registro
