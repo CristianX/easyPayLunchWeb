@@ -117,28 +117,28 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Mis Productos',
-            'url'         => 'clientes',
+            'text'        => 'Productos',
+            'url'         => 'producto',
             'icon'        => 'beer',
             /*'label'       => '!', //por defecto era 4
             'label_color' => 'success',*/
         ],
         [
-            'text'        => 'Mis Categorias',
-            'url'         => 'productos',
+            'text'        => 'Categorias',
+            'url'         => 'categoria',
             'icon'        => 'tasks',
             /*'label'       => '!',  //por defecto era 4
             'label_color' => 'success',*/
         ],
         [
-            'text'        => 'Mis Promociones',
-            'url'         => 'productos',
+            'text'        => 'Promociones',
+            'url'         => 'promocion',
             'icon'        => 'area-chart',
             /*'label'       => '!',  //por defecto era 4
             'label_color' => 'success',*/
         ],
         [
-            'text'        => 'Mis Pedidos',
+            'text'        => 'Pedidos',
             'url'         => '/pedido',
             'icon'        => 'motorcycle',
             /*'label'       => '!',  //por defecto era 4

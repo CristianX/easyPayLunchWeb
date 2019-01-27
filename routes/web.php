@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,8 +13,6 @@ Route::post('/clientes','ClienteController@addCliente')->name('clientes_add')->m
 Route::get('/clientes/{id}/editar', 'ClienteController@editar')->name('usuario')->middleware('verified');
 Route::get('/clientes/{id}/eliminar', 'ClienteController@eliminar')->name('eliminarUsuario')->middleware('verified');
 
-
-
 //Perfil de usuario
 Route::get('/perfil', 'UserController@profile')->name('perfil')->middleware('verified');
 Route::post('/perfil', 'UserController@update_avatar');
@@ -33,6 +20,20 @@ Route::post('/perfil', 'UserController@update_avatar');
 //pedidos
 Route::get('/pedido', 'PedidoController@listarPedidos')->name('pedido')->middleware('verified');
 
+//Productos
+Route::get('/producto', 'ProductoControlador@listarProducto')->name('producto')->middleware('verified');
+Route::get('/producto1', 'ProductoControlador@registrarProducto');
+Route::post('/producto', 'ProductoControlador@actualizarProducto');
+
+//Categorias
+Route::get('/categoria', 'CategoriaControlador@listarCategoria')->name('categoria')->middleware('verified');
+Route::get('/categoria1', 'CategoriaControlador@registrarCategoria');
+Route::post('/categoria', 'CategoriaControlador@actualizarCategoria');
+
+//Promociones
+Route::get('/promocion', 'PromocionControlador@listarPromocion')->name('promocion')->middleware('verified');
+Route::get('/promocion1', 'PromocionControlador@registrarPromocion');
+Route::post('/promocion', 'PromocionControlador@actualizarPromocion');
 
 //Autenticación y Registro
 /*Route::get('/login', 'Auth\LoginController@login')->name('login');

@@ -44,12 +44,5 @@ class PedidoController extends Controller
     //return json_encode($all_subject);
    return view('pedido.pedido', compact('all_subject'));
 
-
-
-
-
-
-
-
   }
 }

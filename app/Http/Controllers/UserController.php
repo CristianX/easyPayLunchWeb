@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use Image;
+use Kreait\Firebase;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
 
 class UserController extends Controller
 {
@@ -14,7 +17,20 @@ class UserController extends Controller
     //funcion para el perfil de usuario
     public function profile(){
 
-      return view('usuario.profile', array('user' => Auth::user()) );
+      $user = Auth::user();
+      $id = $user->name;
+
+      $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/firebaseService.json');
+        $firebase = (new Factory)
+        ->withServiceAccount($serviceAccount)
+        ->withDatabaseUri('https://easy-pay-lunch.firebaseio.com/')
+        ->create();
+        $database = $firebase->getDatabase();
+       
+        $ref = $database->getReference('establecimiento/'.$id.'/informacion');
+        $informacion[$id] = $ref->getValue();
+
+      return view('usuario.profile', compact('informacion') );
 
     }
 
