@@ -139,7 +139,7 @@ return [
         ],
         [
             'text'        => 'Pedidos',
-            'url'         => '/pedido',
+            'url'         => 'pedido',
             'icon'        => 'motorcycle',
             /*'label'       => '!',  //por defecto era 4
             'label_color' => 'success',*/
