@@ -66,7 +66,7 @@ class PromocionControlador extends Controller
         $actualizacion["descripcion"] = $request->input('descripcion');
         $actualizacion["precio"] = $request->input('precio');
         $actualizacion["disponibilidad"] = $estado;
-        $actualizacion["imagen"] = "http://www.tucmag.net/wp-content/uploads/2017/09/Bojack-e1409246704757-700x700.jpeg";
+        $actualizacion["imagen"] = "https://vignette.wikia.nocookie.net/new-fantendo/images/8/86/Hamburguesa.png/revision/latest?cb=20160326024725&path-prefix=es";
         $actualizacion["etiqueta"] = explode( ',', $request->input('etiqueta') );
 
         $ref2 -> update($actualizacion);

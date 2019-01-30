@@ -57,6 +57,7 @@
     <div class="card-columns">  
         @if($datos)
             @foreach ($lista_categorias as $categoria => $value)
+            <form>
                 <div class="card">
                     <img class="card-img-top" src="{{$value['imagen']}}" style="height: 150px; width:100%; border-radius: 5px 5px 0 0; " alt="imagen establecimiento">
                     <div class="card-body">
@@ -77,6 +78,7 @@
                     </div> 
                 </div>
                 <hr>
+                </form>
             @endforeach
 
         @else
