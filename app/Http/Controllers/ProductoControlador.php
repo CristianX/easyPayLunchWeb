@@ -22,7 +22,10 @@ class ProductoControlador extends Controller
         ->withDatabaseUri('https://easy-pay-lunch.firebaseio.com/')
         ->create();
         $database = $firebase->getDatabase();
+        
         $ref = $database->getReference('establecimiento/'.$id."/producto");
+        
+
         $datos = False;
         try{
             $id_productos = $ref->getChildKeys();
@@ -81,11 +84,17 @@ class ProductoControlador extends Controller
         $firebase = (new Factory)
         ->withServiceAccount($serviceAccount)
         ->withDatabaseUri('https://easy-pay-lunch.firebaseio.com/')
+        ->withDefaultStorageBucket('another-default-bucket')
         ->create();
         $database = $firebase->getDatabase();
+        $storage = $firebase->getStorage();
+        $bucket = $storage->bucket('test-bucket');
+        
         $ref = $database 
         ->getReference('establecimiento/'.$id.'/producto')
         ->push(['nombre' => "jojo"]);
+        
+
         $id_P = $ref->getKey();
 
         $ref2 = $database->getReference('establecimiento/'.$id.'/producto/'.$id_P);
@@ -106,6 +115,8 @@ class ProductoControlador extends Controller
         $actualizacion["etiqueta"] = explode( ',', $request->input('etiqueta') );
 
         $ref2 -> update($actualizacion);
+        //$storage -> child();
+        echo $request->input('imagen');
 
         return back();
     }

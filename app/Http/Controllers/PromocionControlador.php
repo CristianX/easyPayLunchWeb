@@ -12,13 +12,14 @@ use Kreait\Firebase\ServiceAccount;
 class PromocionControlador extends Controller
 {
     public function listarPromocion(){
-        $user = Auth::user();
-        $id = $user->name;
         $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/firebaseService.json');
         $firebase = (new Factory)
         ->withServiceAccount($serviceAccount)
         ->withDatabaseUri('https://easy-pay-lunch.firebaseio.com/')
         ->create();
+
+        $user = Auth::user();
+        $id = $user->name;
         $database = $firebase->getDatabase();
         $ref = $database->getReference('establecimiento/'.$id."/promocion");
         $datos = False;
@@ -29,7 +30,6 @@ class PromocionControlador extends Controller
                 $ref2 = $database->getReference('establecimiento/'.$id.'/promocion/'.$idP);
                 $lista_promociones[$idP] = $ref2->getValue();
             }
-    
             return view("promocion", compact('lista_promociones', 'datos'));
         }catch(\Exception $e){
             return view("promocion", compact('lista_promociones', 'datos'));
@@ -75,6 +75,12 @@ class PromocionControlador extends Controller
     }
    
     public function actualizarPromocion(Request $request){
+        $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/firebaseService.json');
+            $firebase = (new Factory)
+            ->withServiceAccount($serviceAccount)
+            ->withDatabaseUri('https://easy-pay-lunch.firebaseio.com/')
+            ->create();
+        $database = $firebase->getDatabase();
         $user = Auth::user();
         $id = $user->name;
         try{
@@ -84,12 +90,7 @@ class PromocionControlador extends Controller
             }else{
                 $estado = 'No Disponible';
             }
-            $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/firebaseService.json');
-            $firebase = (new Factory)
-            ->withServiceAccount($serviceAccount)
-            ->withDatabaseUri('https://easy-pay-lunch.firebaseio.com/')
-            ->create();
-            $database = $firebase->getDatabase();
+            
             $ref = $database->getReference('establecimiento/'.$id.'/promocion/'.$idP);
 
             $actualizacion["nombre"] = $request->input('nombre');

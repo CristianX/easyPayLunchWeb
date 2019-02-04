@@ -19,6 +19,8 @@ Route::post('/perfil', 'UserController@update_avatar');
 
 //pedidos
 Route::get('/pedido', 'PedidoController@listarPedidos')->name('pedido')->middleware('verified');
+Route::get('/detalle_pedido', 'DetallePedidoControlador@verDetalle')->name('detalle_pedido')->middleware('verified');
+Route::get('/pedido', 'DetallePedidoControlador@actulizarPedido')->name('pedido')->middleware('verified');
 
 //Productos
 Route::get('/producto', 'ProductoControlador@listarProducto')->name('producto')->middleware('verified');

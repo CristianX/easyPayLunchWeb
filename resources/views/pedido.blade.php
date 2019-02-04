@@ -11,28 +11,29 @@
 @stop
 
 @section('content')
-
-         <table id="example1" class="table table-bordered table-striped">
-           <thead>
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
            <tr>
-             <th>Estado</th>
-             <th>Usuario</th>
-             <th>Detalles</th>
-
+                <th>Estado</th>
+                <th>Pedido</th>
+                <th>Detalle</th>
            </tr>
-           </thead>
-           <tbody>
-           @foreach ($all_subject as $pedido)
-           <tr>
-             <td>{{$pedido['estado']}}</td>
-             <td>{{$pedido['usuario']}}</td>
-             <td><button type="input" class="btn btn-link" data-toggle="modal" data-target="#modal-default">
-                 <span>ver</span>
-               </button></td>
-
-           </tr>
+        </thead>
+        <tbody>
+           @foreach ($lista_pedidos as $id_pedido => $pedido)
+            <tr>
+                <td>{{$pedido['estado']}}</td>
+                <form method="get" action="{{action('DetallePedidoControlador@verDetalle')}}">
+                    <td>
+                        <label >{{$id_pedido}}</label>
+                        <input name="pedido" type="hidden" value="{{$id_pedido}}"/>
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-link" >ver</button>
+                    </td>
+                </form>
+            </tr>
            @endforeach
-           </tbody>
-         </table>
-
+        </tbody>
+    </table>
 @stop
