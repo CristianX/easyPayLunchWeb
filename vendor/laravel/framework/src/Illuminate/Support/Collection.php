@@ -312,7 +312,6 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     /**
      * Dump the collection and end the script.
      *
-     * @param  mixed  ...$args
      * @return void
      */
     public function dd(...$args)
